@@ -11,6 +11,8 @@ An Open Source Monorepo where i build and try new technologies on a shared codeb
 - [ ] shared config for eslint, prettier, vite, tailwind,husky etc
 - [ ] trying Radix UI
 - [ ] shared auth lib
+- [ ] trying @vercel/analytics,@vercel/font
+- [ ] Add OG image using @vercel/og
 - [ ] building a shared design system with tailwind
 - [ ] edge serverless function API routes in vercel
 - [ ] benchmarking edges,serveless of vercel,astro, sveltekit... maybe remix
@@ -18,12 +20,12 @@ An Open Source Monorepo where i build and try new technologies on a shared codeb
 - [ ] zustand combined with react query
 - [ ] zod validation
 - [ ] self hosted analytics
+- [ ] Add a blog using MDX
 - [ ] Dark mode using Tailwind CSS
 - [ ] Subscriptions using Stripe
-- [ ] nodemailer with mailgun or postmark
-- [ ] Add a sync mobile app using React Native
-- [ ] Add a blog using MDX
+- [ ] emails with mailgun or postmark
+- [ ] implement a connected mobile web app using React Native
 - [ ] add CI/CD (github actions)
-- [ ] Add OG image for blog using @vercel/og
+
 - [ ] add tests (vitest)
 - [ ] api gateway and microservices using nest
