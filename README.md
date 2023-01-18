@@ -1,6 +1,6 @@
 # Tauxa
 
-An Open Source Monorepo where i build and try new technologies on a shared codebase.
+An Open Source TS turborepo where i build and try new technologies on a shared codebase.
 
 > **Warning**
 > This monorepo is a work in progress. I'm building this in public.
@@ -26,6 +26,5 @@ An Open Source Monorepo where i build and try new technologies on a shared codeb
 - [ ] emails with mailgun or postmark
 - [ ] implement a connected mobile web app using React Native
 - [ ] add CI/CD (github actions)
-
 - [ ] add tests (vitest)
 - [ ] api gateway and microservices using nest
