@@ -1,4 +1,4 @@
-# Tauxa
+# Radiance
 
 An Open Source TS turborepo where i build and try new technologies on a shared codebase.
 
