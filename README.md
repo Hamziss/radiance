@@ -25,6 +25,6 @@ An Open Source TS turborepo where i build and try new technologies on a shared c
 - [ ] Subscriptions using Stripe
 - [ ] emails with mailgun or postmark
 - [ ] implement a connected mobile web app using React Native
-- [ ] add CI/CD (github actions)
+- [ ] add complex CI/CD (github actions)
 - [ ] add tests (vitest)
 - [ ] api gateway and microservices using nest
