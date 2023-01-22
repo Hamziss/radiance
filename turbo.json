@@ -4,7 +4,12 @@
         "DISCORD_CLIENT_SECRET",
         "DISCORD_CLIENT_ID",
         "NEXTAUTH_URL",
-        "SKIP_ENV_VALIDATION"
+        "SKIP_ENV_VALIDATION",
+        "VERCEL_URL",
+        "PORT",
+        "NODE_ENV",
+        "VERCEL",
+        "NEXTAUTH_SECRET"
     ],
     "$schema": "https://turbo.build/schema.json",
     "pipeline": {
