@@ -1,10 +1,4 @@
-module.exports = {
-    content: [
-        'src/**/*.{js,ts,jsx,tsx}',
-        '../../packages/ui/**/*.{js,ts,jsx,tsx}',
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
-}
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const config = require("tailwind-config/tailwind.config.js");
+
+module.exports = config;
