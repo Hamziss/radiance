@@ -1,7 +1,6 @@
 import { Button } from "ui"
 
 export default function Web() {
-	console.log("Button")
 	return (
 		<div>
 			<h1>Web</h1>
