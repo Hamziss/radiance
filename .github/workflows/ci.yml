@@ -21,8 +21,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install dependencies
-        run: npx pnpm ci
-
       - name: Lint code
         run: npx eslint .
