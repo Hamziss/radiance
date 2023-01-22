@@ -1,15 +1,22 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
-    },
-    "lint": {
-      "outputs": []
-    },
-    "dev": {
-      "cache": false
+    "globalEnv": [
+        "DATABASE_URL",
+        "DISCORD_CLIENT_SECRET",
+        "DISCORD_CLIENT_ID",
+        "NEXTAUTH_URL",
+        "SKIP_ENV_VALIDATION"
+    ],
+    "$schema": "https://turbo.build/schema.json",
+    "pipeline": {
+        "build": {
+            "dependsOn": ["^build"],
+            "outputs": ["dist/**", ".next/**"]
+        },
+        "lint": {
+            "outputs": []
+        },
+        "dev": {
+            "cache": false
+        }
     }
-  }
 }
