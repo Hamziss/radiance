@@ -10,12 +10,14 @@
         "build": "turbo run build",
         "dev": "turbo run dev --parallel",
         "lint": "turbo run lint",
-        "format": "prettier --write \"**/*.{ts,tsx,md}\""
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "eslint-config-custom": "workspace:*",
         "prettier": "^2.8.3",
-        "turbo": "latest"
+        "turbo": "latest",
+        "husky": "^8.0.0"
     },
     "engines": {
         "node": ">=14.0.0"
