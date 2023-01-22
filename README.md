@@ -8,7 +8,7 @@ An Open Source TS turborepo where i build and try new technologies on a shared c
 
 ## Roadmap
 
-- [ ] shared config for eslint, prettier, vite, tailwind,husky etc
+- [x] shared config for eslint, prettier, vite, tailwind,husky etc
 - [ ] trying Radix UI
 - [ ] shared auth lib
 - [ ] trying @vercel/analytics,@vercel/font
