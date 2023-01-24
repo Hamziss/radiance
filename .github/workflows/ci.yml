@@ -23,3 +23,6 @@ jobs:
 
       - name: Lint code
         run: npx eslint .
+        if: ${{ failure() }}
+        env:
+          CI: true
