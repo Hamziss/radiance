@@ -21,10 +21,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Set environment variables
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+
       - name: Lint code
         run: pnpm run lint
         if: always()
-        id: lint
+        env:
+          CI: true
 
       - name: Check for lint errors
         run: |
