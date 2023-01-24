@@ -23,6 +23,3 @@ jobs:
 
       - name: Lint code
         run: pnpm run lint
-        if: ${{ failure() }}
-        env:
-          CI: true
