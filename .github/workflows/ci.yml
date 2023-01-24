@@ -4,9 +4,6 @@ on: [push, pull_request]
 
 jobs:
   lint:
-    env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +24,8 @@ jobs:
       - name: Lint code
         run: pnpm run lint
         if: always()
-        id: lint
+        env:
+          SKIP_ENV_VALIDATION: true
 
       - name: Check for lint errors
         run: |
