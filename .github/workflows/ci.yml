@@ -22,7 +22,7 @@ jobs:
         run: pnpm install
 
       - name: Lint code
-        run: npx eslint .
+        run: pnpm run lint
         if: ${{ failure() }}
         env:
           CI: true
