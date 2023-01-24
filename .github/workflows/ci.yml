@@ -23,3 +23,17 @@ jobs:
 
       - name: Lint code
         run: pnpm run lint
+        if: always()
+        env:
+          CI: true
+        id: lint
+
+      - name: Check for lint errors
+        run: |
+          if [ -n "$(grep 'error' $(steps.lint.outputs.lint_output))" ]; then
+            echo "Linting errors found!"
+            exit 1
+          fi
+        if: always()
+        env:
+          CI: true
