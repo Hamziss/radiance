@@ -11,6 +11,7 @@ An Open Source TS turborepo where i build and try new technologies on a shared c
 - [x] shared config for eslint, prettier, vite, tailwind,husky etc
 - [ ] trying Radix UI
 - [ ] shared auth lib
+- [ ] search engine with algolia
 - [ ] trying @vercel/analytics,@vercel/font
 - [ ] Add OG image using @vercel/og
 - [ ] building a shared design system with tailwind
