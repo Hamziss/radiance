@@ -1,5 +1,5 @@
 const colors = require("tailwindcss/colors");
-
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 
 module.exports = {
@@ -10,6 +10,10 @@ module.exports = {
                 brandblue: colors.blue[500],
                 brandred: colors.red[500],
                 brandyellow: colors.yellow[500],
+            },
+            fontFamily: {
+                primary: ['var(--inter-font)', ...fontFamily.sans],
+                serif: ['var(--inter-font)', ...fontFamily.serif],
             },
         },
     },
