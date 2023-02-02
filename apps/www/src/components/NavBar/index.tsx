@@ -19,18 +19,20 @@ const NavigationMenu = ({}: NavigationMenuProps) => {
 		<NavigationMenuPrimitive.Root className="relative flex w-full flex-col items-center">
 			<div className="w-full max-w-7xl  backdrop-blur-xl">
 				<NavigationMenuPrimitive.List className="flex flex-row items-center rounded-lg py-3 px-3">
-					<Link
-						href="/"
-						className="flex items-center gap-2 font-serif font-bold text-white"
-					>
-						<Image
-							src={"/icon.png"}
-							width={35}
-							height={35}
-							alt="logo of radiance"
-						/>
-						Radiance
-					</Link>
+					<li>
+						<Link
+							href="/"
+							className="flex items-center gap-2 font-serif font-bold text-white"
+						>
+							<Image
+								src={"/icon.png"}
+								width={35}
+								height={35}
+								alt="logo of radiance"
+							/>
+							Radiance
+						</Link>
+					</li>
 					<NavigationMenuPrimitive.Item>
 						<NavigationMenuPrimitive.Link
 							className={clsx(
