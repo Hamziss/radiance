@@ -241,7 +241,7 @@ const AuthShowcase: React.FC = () => {
 					"radix-state-instant-open:bg-gray-50 radix-state-delayed-open:bg-gray-50",
 				)}
 			>
-				{sessionData ? "" : "Sign Up"}
+				{sessionData ? "" : "Sign up"}
 			</button>
 		</div>
 	)
