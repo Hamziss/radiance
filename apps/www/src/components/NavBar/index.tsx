@@ -128,7 +128,7 @@ const NavigationMenu = ({}: NavigationMenuProps) => {
 							</div>
 						</NavigationMenuPrimitive.Content>
 					</NavigationMenuPrimitive.Item>
-					<NavigationMenuPrimitive.Item asChild>
+					<NavigationMenuPrimitive.Item>
 						<NavigationMenuPrimitive.Link
 							className={clsx(
 								"cursor-not-allowed rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-900",
@@ -138,8 +138,9 @@ const NavigationMenu = ({}: NavigationMenuProps) => {
 							Analytics
 						</NavigationMenuPrimitive.Link>
 					</NavigationMenuPrimitive.Item>
-					<NavigationMenuPrimitive.Item asChild>
+					<NavigationMenuPrimitive.Item>
 						<NavigationMenuPrimitive.Link
+							href="/docs"
 							className={clsx(
 								"cursor-not-allowed rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-900",
 								"text-sm font-medium text-gray-700 dark:text-gray-100",
@@ -148,7 +149,7 @@ const NavigationMenu = ({}: NavigationMenuProps) => {
 							Pricing
 						</NavigationMenuPrimitive.Link>
 					</NavigationMenuPrimitive.Item>
-					<NavigationMenuPrimitive.Item asChild>
+					<NavigationMenuPrimitive.Item>
 						<NavigationMenuPrimitive.Link
 							className={clsx(
 								"cursor-not-allowed rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-900",
