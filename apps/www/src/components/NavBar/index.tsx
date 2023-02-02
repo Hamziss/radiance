@@ -171,26 +171,29 @@ const NavigationMenu = ({}: NavigationMenuProps) => {
 						<div className="relative top-1 h-2 w-2 rotate-45 bg-white dark:bg-gray-800" />
 					</NavigationMenuPrimitive.Indicator>
 					<AuthShowcase />
+					<div
+						className={clsx(
+							"absolute top-[64px] left-24 flex justify-center",
+							"",
+						)}
+						style={{
+							perspective: "2000px",
+						}}
+					>
+						<NavigationMenuPrimitive.Viewport
+							className={clsx(
+								"relative mt-2 overflow-hidden rounded-md bg-white shadow-lg dark:bg-gray-800",
+								"w-radix-navigation-menu-viewport",
+								"h-radix-navigation-menu-viewport",
+								"radix-state-open:animate-scale-in-content",
+								"radix-state-closed:animate-scale-out-content",
+								"origin-[top_center] transition-[width_height] duration-300 ease-[ease]",
+							)}
+						/>
+					</div>
 				</NavigationMenuPrimitive.List>
 			</div>
 			<div className="h-[1px] w-full bg-slate-700 dark:bg-neutral-600 "></div>
-			<div
-				className={clsx("absolute  left-24 flex justify-center", "")}
-				style={{
-					perspective: "2000px",
-				}}
-			>
-				<NavigationMenuPrimitive.Viewport
-					className={clsx(
-						"relative mt-2 overflow-hidden rounded-md bg-white shadow-lg dark:bg-gray-800",
-						"w-radix-navigation-menu-viewport",
-						"h-radix-navigation-menu-viewport",
-						"radix-state-open:animate-scale-in-content",
-						"radix-state-closed:animate-scale-out-content",
-						"origin-[top_center] transition-[width_height] duration-300 ease-[ease]",
-					)}
-				/>
-			</div>
 		</NavigationMenuPrimitive.Root>
 	)
 }
