@@ -1,7 +1,10 @@
 import { type NextPage } from "next"
 import Head from "next/head"
 
+import { TooltipHelper } from "@/components/Tooltip"
+import { stack } from "@/constants/stack"
 import { NavigationMenu } from "@components/NavBar"
+import Image from "next/image"
 
 const Home: NextPage = () => {
 	// const hello = api.example.hello.useQuery({ text: "from tRPC" })
@@ -15,7 +18,7 @@ const Home: NextPage = () => {
 			</Head>
 			<main className="flex min-h-screen flex-col items-center  bg-black ">
 				<NavigationMenu />
-				<h1 className="mt-28 lg:text-6xl xl:text-7xl">
+				<h1 className="mt-36 lg:text-6xl xl:text-7xl">
 					<span className="fancy-bg-blue font-extrabold ">
 						Typesafety.&nbsp;
 					</span>
@@ -28,6 +31,20 @@ const Home: NextPage = () => {
 					A TS turborepo where i build and try new technologies on a shared
 					codebase.
 				</p>
+				<p className="mt-64 text-base text-gray-600">USED TECHNOLOGIES</p>
+				<div className="mt-2 flex items-center gap-5 text-white ">
+					{stack.map(item => (
+						<TooltipHelper content={item.tooltip}>
+							<Image
+								className=" opacity-25 duration-500 hover:opacity-100"
+								width={40}
+								height={40}
+								src={item.icon}
+								alt={item.name}
+							/>
+						</TooltipHelper>
+					))}
+				</div>
 			</main>
 		</>
 	)
