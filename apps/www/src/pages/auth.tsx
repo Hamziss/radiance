@@ -1,4 +1,4 @@
-import { Button, Divider, Input } from "@geist-ui/core"
+import { Button, Divider, Input, Link } from "@geist-ui/core"
 
 export default function SignIn() {
 	return (
@@ -14,7 +14,10 @@ export default function SignIn() {
 			<Divider w={"20rem"} className=" opacity-50">
 				OR
 			</Divider>
-			<Input className=" mt-3" w={"20rem"} placeholder="Email Adress" />
+			<Input className="  my-3" w={"20rem"} placeholder="Email Adress" />
+			<Link href="/signup" color underline>
+				Don&apos;t have an account? Sign Up &rarr;
+			</Link>
 		</div>
 	)
 }
