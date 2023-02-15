@@ -1,32 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+	@apply bg-black;
+}
+
 .fancy-bg-blue {
-    @apply bg-clip-text;
-    background-clip: text;
-    background: linear-gradient(359.46deg, #2400ff 4.78%, #00fff0 76.62%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+	@apply bg-clip-text;
+	background-clip: text;
+	background: linear-gradient(359.46deg, #2400ff 4.78%, #00fff0 76.62%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
 }
 
 .fancy-bg-orange {
-    @apply bg-clip-text;
-    background-clip: text;
-    background: linear-gradient(359.46deg, #ff0000 -4.78%, #ff8c00 86.62%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+	@apply bg-clip-text;
+	background-clip: text;
+	background: linear-gradient(359.46deg, #ff0000 -4.78%, #ff8c00 86.62%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
 }
 
 .fancy-bg-green {
-    @apply bg-clip-text;
-    background-clip: text;
-    background: linear-gradient(359.46deg, #00ff00 -4.78%, #00ff8c 86.62%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+	@apply bg-clip-text;
+	background-clip: text;
+	background: linear-gradient(359.46deg, #00ff00 -4.78%, #00ff8c 86.62%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
 }
