@@ -16,7 +16,7 @@ type NavigationMenuProps = {
 
 const NavigationMenu = ({}: NavigationMenuProps) => {
 	return (
-		<NavigationMenuPrimitive.Root className="relative flex w-full flex-col items-center">
+		<NavigationMenuPrimitive.Root className="relative flex w-full flex-col items-center bg-black">
 			<div className="w-full max-w-7xl  backdrop-blur-xl">
 				<NavigationMenuPrimitive.List className="flex flex-row items-center rounded-lg py-3 px-3">
 					<li>
@@ -209,7 +209,7 @@ const AuthShowcase: React.FC = () => {
 	// )
 
 	return (
-		<div className="ml-auto flex items-center justify-center gap-4">
+		<div className="ml-auto flex items-center justify-center gap-1">
 			{/* <p className="text-center text-2xl text-white">
 				{sessionData && <span>Logged in as {sessionData.user?.name}</span>}
 				{secretMessage && <span> - {secretMessage}</span>}
@@ -217,8 +217,8 @@ const AuthShowcase: React.FC = () => {
 			<button
 				className={clsx(
 					"inline-flex select-none items-center justify-center rounded-md px-4 py-2 text-sm font-medium",
-					"bg-white text-gray-700 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-900",
-					"hover:bg-gray-50",
+					" text-gray-700 hover:text-gray-100 dark:text-gray-300 ",
+
 					"focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
 					// Register all radix states
 					"group",
@@ -230,14 +230,14 @@ const AuthShowcase: React.FC = () => {
 			>
 				{sessionData ? "Logout" : "Login"}
 			</button>
-			<button
+			<Link
+				href="/signin"
 				type="submit"
 				className={clsx(
 					"inline-flex select-none items-center justify-center rounded-md  px-4 py-2 text-sm font-medium",
 					"border border-gray-600  text-gray-700 dark:text-gray-300 dark:hover:border dark:hover:border-white dark:hover:bg-gray-800 dark:hover:text-white",
 					"hover:bg-gray-50",
 					"focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
-					// Register all radix states
 					"group",
 					"radix-state-open:bg-gray-50 dark:radix-state-open:bg-gray-900",
 					"radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
@@ -245,7 +245,7 @@ const AuthShowcase: React.FC = () => {
 				)}
 			>
 				{sessionData ? "" : "Sign up"}
-			</button>
+			</Link>
 		</div>
 	)
 }
