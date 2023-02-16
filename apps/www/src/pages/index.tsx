@@ -4,11 +4,13 @@ import Head from "next/head"
 import FeaturesCards from "@/components/FeaturesCards"
 import { TooltipHelper } from "@/components/Tooltip"
 import { stack } from "@/constants/stack"
+import { useSession } from "next-auth/react"
 import Image from "next/image"
 
 const Home: NextPage = () => {
 	// const hello = api.example.hello.useQuery({ text: "from tRPC" })
-
+	const { data } = useSession()
+	console.log(data)
 	return (
 		<>
 			<Head>

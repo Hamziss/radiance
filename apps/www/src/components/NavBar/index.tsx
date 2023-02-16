@@ -1,6 +1,6 @@
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { clsx } from "clsx"
-import { signIn, signOut, useSession } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -214,11 +214,11 @@ const AuthShowcase: React.FC = () => {
 				{sessionData && <span>Logged in as {sessionData.user?.name}</span>}
 				{secretMessage && <span> - {secretMessage}</span>}
 			</p> */}
-			<button
+			<Link
+				href={sessionData ? "" : "/signin"}
 				className={clsx(
 					"inline-flex select-none items-center justify-center rounded-md px-4 py-2 text-sm font-medium",
 					" text-gray-700 hover:text-gray-100 dark:text-gray-300 ",
-
 					"focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
 					// Register all radix states
 					"group",
@@ -226,10 +226,10 @@ const AuthShowcase: React.FC = () => {
 					"radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
 					"radix-state-instant-open:bg-gray-50 radix-state-delayed-open:bg-gray-50",
 				)}
-				onClick={sessionData ? () => void signOut() : () => void signIn()}
+				onClick={sessionData ? () => void signOut() : undefined}
 			>
 				{sessionData ? "Logout" : "Login"}
-			</button>
+			</Link>
 			<Link
 				href="/auth"
 				type="submit"
@@ -244,7 +244,7 @@ const AuthShowcase: React.FC = () => {
 					"radix-state-instant-open:bg-gray-50 radix-state-delayed-open:bg-gray-50",
 				)}
 			>
-				{sessionData ? "" : "Sign up"}
+				{sessionData ? "dashboard" : "Sign up"}
 			</Link>
 		</div>
 	)
