@@ -3,6 +3,7 @@ import Head from "next/head"
 
 import FeaturesCards from "@/components/FeaturesCards"
 import { TooltipHelper } from "@/components/Tooltip"
+import { Cobe } from "@/components/globe"
 import { stack } from "@/constants/stack"
 import { useSession } from "next-auth/react"
 import Image from "next/image"
@@ -61,6 +62,16 @@ const Home: NextPage = () => {
 				</div>
 			</main>
 			<FeaturesCards />
+			<section className="font-primary flex flex-col items-center gap-5 ">
+				<h2 className="mt-20 text-center text-6xl font-bold dark:text-white">
+					Open Sourcing Everything
+				</h2>
+				<p className=" max-w-xl  text-center dark:text-gray-600 ">
+					Radiance is an Open Source Project. the code is availaible on Github,
+					im also documenting everything on my upcoming blogs
+				</p>
+			</section>
+			<Cobe />
 		</>
 	)
 }
