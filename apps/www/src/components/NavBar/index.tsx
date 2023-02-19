@@ -1,3 +1,4 @@
+import * as Avatar from "@radix-ui/react-avatar"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { clsx } from "clsx"
 import { signOut, useSession } from "next-auth/react"
@@ -202,6 +203,7 @@ const NavigationMenu = ({}: NavigationMenuProps) => {
 }
 const AuthShowcase: React.FC = () => {
 	const { data: sessionData } = useSession()
+	console.log(sessionData)
 
 	// const { data: secretMessage } = api.example.getSecretMessage.useQuery(
 	// 	undefined, // no input
@@ -230,22 +232,38 @@ const AuthShowcase: React.FC = () => {
 			>
 				{sessionData ? "Logout" : "Login"}
 			</Link>
-			<Link
-				href="/auth"
-				type="submit"
-				className={clsx(
-					"inline-flex select-none items-center justify-center rounded-md  px-4 py-2 text-sm font-medium",
-					"border border-gray-600  text-gray-700 dark:text-gray-300 dark:hover:border dark:hover:border-white dark:hover:bg-gray-800 dark:hover:text-white",
-					"hover:bg-gray-50",
-					"focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
-					"group",
-					"radix-state-open:bg-gray-50 dark:radix-state-open:bg-gray-900",
-					"radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
-					"radix-state-instant-open:bg-gray-50 radix-state-delayed-open:bg-gray-50",
-				)}
-			>
-				{sessionData ? "dashboard" : "Sign up"}
-			</Link>
+			{sessionData ? (
+				<Avatar.Root className="bg-blackA3 inline-flex h-[35px] w-[35px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
+					<Avatar.Image
+						className="h-full w-full rounded-[inherit] object-cover"
+						src={sessionData.user.image}
+						alt={`${sessionData.user.name}'s avatar`}
+					/>
+					<Avatar.Fallback
+						className="text-violet11 leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium"
+						delayMs={600}
+					>
+						{sessionData.user.name?.charAt(0) ||
+							sessionData.user.email?.charAt(0)}
+					</Avatar.Fallback>
+				</Avatar.Root>
+			) : (
+				<Link
+					href="/signup"
+					className={clsx(
+						"inline-flex select-none items-center justify-center rounded-md  px-4 py-2 text-sm font-medium",
+						"border border-gray-600  text-gray-700 dark:text-gray-300 dark:hover:border dark:hover:border-white dark:hover:bg-gray-800 dark:hover:text-white",
+						"hover:bg-gray-50",
+						"focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75",
+						"group",
+						"radix-state-open:bg-gray-50 dark:radix-state-open:bg-gray-900",
+						"radix-state-on:bg-gray-50 dark:radix-state-on:bg-gray-900",
+						"radix-state-instant-open:bg-gray-50 radix-state-delayed-open:bg-gray-50",
+					)}
+				>
+					Sign up
+				</Link>
+			)}
 		</div>
 	)
 }

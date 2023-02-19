@@ -1,20 +1,26 @@
 import { env } from "@/env/client.mjs"
-import { Button, Divider, Input, Link } from "@geist-ui/core"
+import { Button, Divider, Input, Link, Note } from "@geist-ui/core"
+import Github from "@geist-ui/icons/github"
 import { signIn } from "next-auth/react"
-
+import Image from "next/image"
+import { useRouter } from "next/router"
 export default function SignIn() {
+	const router = useRouter()
+	const error = ErrorHandler(router.query.error as string)
+
 	const handleSignInEmail = async (
 		e: React.KeyboardEvent<HTMLInputElement>,
 	) => {
 		console.log("in")
 		if (e.key === "Enter") {
-			const res = await signIn("email", {
+			signIn("email", {
 				email: e.currentTarget.value,
 				callbackUrl: env.NEXT_PUBLIC_CLIENT_BASE_URL,
 				redirect: false,
 				role: "user",
+			}).then(res => {
+				router.push(res?.url as string)
 			})
-			console.log(res)
 		}
 	}
 	return (
@@ -22,6 +28,19 @@ export default function SignIn() {
 			<h1 className=" font-primary mb-9 text-5xl font-bold text-white">
 				Login to Radiance
 			</h1>
+			{error && (
+				<Note
+					mb={"12px"}
+					type="error"
+					label={false}
+					filled
+					w={"380px"}
+					className=" font-primary"
+				>
+					{error}
+				</Note>
+			)}
+
 			<div className="mb-3 flex w-80 flex-col gap-2">
 				<Button
 					onClick={() => {
@@ -31,6 +50,8 @@ export default function SignIn() {
 					}}
 					width={"100%"}
 				>
+					{" "}
+					<Github size={16} className="mr-2" />
 					Sign in with Github
 				</Button>
 				<Button
@@ -41,6 +62,13 @@ export default function SignIn() {
 					}
 					width={"100%"}
 				>
+					<Image
+						src="/faang/google.png"
+						width={16}
+						className="mr-2"
+						height={16}
+						alt="google image"
+					/>
 					Sign in with Google
 				</Button>
 				<Button
@@ -51,6 +79,13 @@ export default function SignIn() {
 					}}
 					width={"100%"}
 				>
+					<Image
+						src="/faang/dis.png"
+						width={16}
+						className="mr-2"
+						height={16}
+						alt="dicord image"
+					/>
 					Sign in with Discord
 				</Button>
 			</div>
@@ -70,4 +105,12 @@ export default function SignIn() {
 			</Link>
 		</div>
 	)
+}
+
+//refactor to custom hook if used in multiple places
+const ErrorHandler = (error: string) => {
+	//TODO: Add a way to handle errors using router.query.error
+	if (error === "OAuthAccountNotLinked") {
+		return "The email on this account is already linked, but not with this OAuth account. Sign in with the same OAuth account you used before"
+	}
 }
