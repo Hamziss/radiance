@@ -1,6 +1,5 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import type { GetServerSidePropsContext } from "next"
-
 import {
 	getServerSession,
 	type DefaultSession,
@@ -33,7 +32,6 @@ declare module "next-auth" {
 
 export const authOptions: NextAuthOptions = {
 	adapter: PrismaAdapter(prisma),
-
 	providers: [
 		EmailProvider({
 			server: env.EMAIL_SERVER,
@@ -44,11 +42,18 @@ export const authOptions: NextAuthOptions = {
 			clientId: env.DISCORD_CLIENT_ID,
 			clientSecret: env.DISCORD_CLIENT_SECRET,
 			profile(profile: DiscordProfile) {
+				if (profile.avatar === null) {
+					const defaultAvatarNumber = parseInt(profile.discriminator) % 5
+					profile.image_url = `https://cdn.discordapp.com/embed/avatars/${defaultAvatarNumber}.png`
+				} else {
+					const format = profile.avatar.startsWith("a_") ? "gif" : "png"
+					profile.image_url = `https://cdn.discordapp.com/avatars/${profile.id}/${profile.avatar}.${format}`
+				}
 				return {
 					id: profile.id,
 					email: profile.email,
 					email_verified: profile.verified,
-					image: profile.avatar,
+					image: profile.image_url,
 					name: profile.username,
 					role: "user",
 					familyName: profile.username,
@@ -59,8 +64,6 @@ export const authOptions: NextAuthOptions = {
 			clientId: env.GITHUB_CLIENT_ID,
 			clientSecret: env.GITHUB_CLIENT_SECRET,
 			profile(profile: GithubProfile) {
-				console.log("profile name", profile.name)
-				console.log("profile login", profile.login)
 				return {
 					id: profile.id.toString(),
 					image: profile.avatar_url,
@@ -95,6 +98,9 @@ export const authOptions: NextAuthOptions = {
 			}
 			return session
 		},
+	},
+	pages: {
+		signIn: "/signin",
 	},
 }
 
