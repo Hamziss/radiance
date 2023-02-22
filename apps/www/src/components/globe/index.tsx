@@ -26,7 +26,7 @@ export function Cobe() {
 			dark: 1,
 			scale: 0.7,
 			diffuse: 3,
-			offset: [0, 2600],
+			offset: [0, 1380],
 			mapSamples: 16000,
 			mapBrightness: 1.2,
 			baseColor: [1, 1, 1],
@@ -50,7 +50,7 @@ export function Cobe() {
 		return () => globe.destroy()
 	}, [r])
 	return (
-		<div className="relative mx-auto aspect-[2.2] w-screen max-w-6xl">
+		<div className="relative mx-auto aspect-[2.2] w-screen max-w-xl">
 			<canvas
 				ref={canvasRef as LegacyRef<HTMLCanvasElement> | undefined}
 				onPointerDown={e => {

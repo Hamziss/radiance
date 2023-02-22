@@ -16,8 +16,6 @@ const Home: NextPage = () => {
 		<>
 			<Head>
 				<title>Radiance</title>
-				<meta name="description" content="Radiance a TS turborepo" />
-				<link rel="icon" href="/icon.png" />
 			</Head>
 
 			<main className="flex  flex-col items-center justify-start bg-black ">

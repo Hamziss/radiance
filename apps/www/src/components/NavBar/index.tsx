@@ -154,8 +154,9 @@ const NavigationMenu = ({}: NavigationMenuProps) => {
 					</NavigationMenuPrimitive.Item>
 					<NavigationMenuPrimitive.Item>
 						<NavigationMenuPrimitive.Link
+							href="/benchmarks"
 							className={clsx(
-								"cursor-not-allowed rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-900",
+								" rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-900",
 								"text-sm font-medium text-gray-700 dark:text-gray-100",
 							)}
 						>
