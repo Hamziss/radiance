@@ -22,7 +22,7 @@
 	"pipeline": {
 		"build": {
 			"dependsOn": ["^build"],
-			"outputs": ["dist/**", ".next/**"]
+			"outputs": ["dist/**", ".next/**", ".vercel/**"]
 		},
 		"lint": {
 			"outputs": []
