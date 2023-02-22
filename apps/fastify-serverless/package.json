@@ -5,8 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"vercel": "vercel dev",
-		"build": "vercel build"
+		"vercel": "vercel dev"
 	},
 	"keywords": [],
 	"type": "module",
