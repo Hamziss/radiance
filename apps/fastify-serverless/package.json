@@ -6,7 +6,6 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"vercel": "vercel dev",
-		"vercelbuild": "vercel build",
 		"vercelprod": "vercel --prod"
 	},
 	"keywords": [],
