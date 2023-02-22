@@ -1,6 +1,6 @@
 import Fastify from 'fastify'
 
-const fastify = Fastify({ logger: true })
+const app = Fastify({ logger: true })
 const schema = {
   schema: {
     response: {
@@ -16,8 +16,10 @@ const schema = {
   }
 }
 
-fastify.get('/', schema, function (req, res) {
+app.get('/', schema, function (req, res) {
   res.send({ message: 'hello from fastify serverless' })
 })
-
-fastify.listen({ port: 3000, host: '127.0.0.1' })
+export default async function handler(req, res) {
+  await app.ready();
+  app.server.emit('request', req, res);
+}
