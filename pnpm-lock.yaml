@@ -16,6 +16,12 @@ importers:
       prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.3
       turbo: 1.8.2
 
+  apps/bench-fastify:
+    specifiers:
+      fastify: ^4.13.0
+    dependencies:
+      fastify: 4.13.0
+
   apps/fastify-serverless:
     specifiers:
       fastify: ^4.13.0
