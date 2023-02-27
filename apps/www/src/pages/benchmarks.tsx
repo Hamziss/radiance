@@ -10,19 +10,13 @@ export default function Benchmarks() {
 			</div>
 			<div className="flex flex-wrap justify-center gap-4">
 				<Card hoverable className=" row-span-2 " padding="12px">
-					<span className="mb-6">server-based express </span>
+					<span className="mb-6">server-based express</span>
 				</Card>
 				<Card hoverable className=" row-span-2 ">
 					server-based fastify
 				</Card>
 				<Card hoverable className=" row-span-2 ">
-					express on a lambda
-				</Card>
-				<Card hoverable className=" row-span-2 ">
-					fastify on a lambda
-				</Card>
-				<Card hoverable className=" row-span-2 ">
-					nextjs on a lambda
+					fastify on vercel edge
 				</Card>
 				<Card hoverable className=" row-span-2 ">
 					nextjs api route
