@@ -9,7 +9,7 @@ An Open Source TS turborepo where i build and try new technologies on a shared c
 ## Roadmap
 
 - [x] shared config for eslint, prettier, vite, tailwind,husky etc
-- [ ] trying Radix UI
+- [x] trying Radix UI, Geist-UI
 - [ ] shared auth lib
 - [ ] search engine with algolia
 - [ ] trying @vercel/analytics,@vercel/font
@@ -17,15 +17,15 @@ An Open Source TS turborepo where i build and try new technologies on a shared c
 - [ ] building a shared design system with tailwind
 - [ ] edge serverless function API routes in vercel
 - [ ] benchmarking edges,serveless of vercel,astro, sveltekit... maybe remix
-- [ ] react query complex architecture
+- [ ] react query with react-query-devtools
 - [ ] zustand combined with react query
-- [ ] zod validation
+- [ ] zod validation with react-hook-form
 - [ ] self hosted analytics
 - [ ] Add a blog using MDX
 - [ ] Dark mode using Tailwind CSS
 - [ ] Subscriptions using Stripe
 - [ ] emails with mailgun or postmark
 - [ ] implement a connected mobile web app using React Native
-- [ ] add complex CI/CD (github actions)
+- [x] add complex CI/CD (github actions)
 - [ ] add tests (vitest)
 - [ ] api gateway and microservices using nest
