@@ -10,7 +10,7 @@ export default function handler() {
 			status: 200,
 			headers: {
 				"content-type": "application/json",
-				"Cache-Control": "s-maxage=86400",
+				"Cache-Control": "public, s-maxage=86400",
 			},
 		},
 	)
